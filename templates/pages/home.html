@@ -1,0 +1,343 @@
+{% extends 'base.html' %}
+
+{% block title %} | Home {% endblock %}
+{% block content %}
+
+{% load humanize %}
+{% load static %}
+<!-- Banner start -->
+
+<div class="banner" id="banner">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner banner-slider-inner text-center">
+            <div class="carousel-item banner-max-height active item-bg">
+              
+                <img class="d-block w-100 h-150" src="data:image/jpeg;base64,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" alt="banner">
+                <div class="carousel-content container banner-info-2 bi-2 text-left">
+                
+                    <h3>Own Your Cars</h3>
+                    <h5>Allow us to guide you through the innovative stress<br>
+                        free approach in finding your dream car.</h5>
+                    <a href="{% url 'services' %}" class="btn btn-lg " style="background-color:#f7cf15; color:white">Read More</a>
+                </div>
+            </div>
+            <div class="carousel-item banner-max-height item-bg">
+
+                <img class="d-block w-100 h-150" src="https://i.pinimg.com/originals/e1/a2/47/e1a247af15c15843c5b97c3c9d5530e1.jpg" alt="banner">
+                <div class="carousel-content container banner-info-2 bi-2 text-left">
+                    <h3>Fuel for Soul</h3>
+                    <h5>Allow us to guide you through the innovative stress<br>
+                        free approach in finding your dream car.</h5>
+                    <a href="{% url 'services' %}" class="btn btn-lg  " style="background-color:#f7cf15; color:white">Read More</a>
+                </div>
+            </div>
+            <div class="carousel-item banner-max-height item-bg">
+
+                <img class="d-block w-100 h-100" src="https://rocketleague.media.zestyio.com/Transformers_8vhjioaq63c.jpg?width=1920&optimize=high" alt="banner">
+                <div class="carousel-content container banner-info-2 bi-2 text-left">
+                    <h3>Car for Everyone</h3>
+                    <h5>Allow us to guide you through the innovative stress<br>
+                        free approach in finding your dream car.</h5>
+                    <a href="{% url 'services' %}" class="btn btn-lg " style="background-color:#f7cf15; color:white">Read More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Search box 3 start -->
+
+        <div class="search-box-4 sb-8" style="background-color: black; color: black;">
+            <form action="{% url 'search' %}" method="">
+                <div class="form-group">
+                    <input type="text" name="keyword" placeholder="Search by Car Name" class="form-control">
+                </div>
+        
+                <div class="form-group">
+                    <select class="form-control search-fields" name="model">
+                        <option selected="true" disabled="disabled">Model</option>
+                        {% for model in model_search %}
+                            <option value="{{ model }}">{{ model }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <select class="form-control search-fields" name="city">
+                        <option selected="true" disabled="disabled">Location</option>
+                        {% for city in city_search %}
+                            <option value="{{ city }}">{{ city }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <select class="form-control search-fields" name="year">
+                        <option selected="true" disabled="disabled">Year</option>
+                        {% for year in year_search %}
+                            <option value="{{ year }}">{{ year }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <select class="form-control search-fields" name="body_style">
+                        <option selected="true" disabled="disabled">Select Type Of Car</option>
+                        {% for body_style in body_style_search %}
+                            <option value="{{ body_style }}">{{ body_style }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="range-slider clearfix " >
+                    <label>Price</label>
+                    <div data-min="0" data-max="150000" data-min-name="min_price" data-max-name="max_price" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false" ></div>
+                    <div class="clearfix"></div>
+                </div>
+                
+                <div class="form-group">
+                    <button class="btn btn-block button-theme btn-md" style="background-color:#f7cf15; color:black">
+                        <i class="fa fa-filter"></i> Filter
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Search box 3 end -->
+        <a class="carousel-control-prev none-580" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="slider-mover-left" aria-hidden="true">
+                <i class="fa fa-angle-left"></i>
+            </span>
+        </a>
+        <a class="carousel-control-next none-580" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="slider-mover-right" aria-hidden="true">
+                <i class="fa fa-angle-right"></i>
+            </span>
+        </a>
+		
+    </div>
+</div>
+<!-- Banner end -->
+
+<!-- Search box 2 end -->
+
+<!-- Featured car start -->
+<div class="featured-car content-area-5">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>Featured <span>Cars</span></h1>
+            <p>Amongst many of our available cars, here are some few picks that you might have an interest in.</p>
+        </div>
+        <!-- Slick slider area start -->
+        <div class="slick-slider-area clearfix">
+            <div class="row slick-carousel" data-slick='{"slidesToShow": 3, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+              {% for car in featured_cars %}
+                <div class="slick-slide-item">
+                    <div class="car-box-3">
+                        <div class="car-thumbnail">
+                            <a href="{% url 'car_detail' car.id %}" class="car-img">
+                                <div class="tag-2">Featured</div>
+                                <div class="price-box">
+                                    <span>${{car.price | intcomma}}</span>
+                                </div>
+                                <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car" style="min-height: 262px; max-height: 262px;">
+                            </a>
+                            <div class="carbox-overlap-wrapper">
+                                <div class="overlap-box">
+                                    <div class="overlap-btns-area">
+                                        <div class="car-magnify-gallery">
+                                            <a href="{{car.car_photo.url}}" class="overlap-btn">
+                                                <i class="fa fa-expand"></i>
+                                                <img class="hidden" src="{{car.car_photo.url}}">
+                                            </a>
+                                            {% if car.car_photo_1 %}
+                                            <a href="{{car.car_photo_1.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_1.url}}">
+                                            </a>
+                                            {% endif %}
+                                            {% if car.car_photo_2 %}
+                                            <a href="{{car.car_photo_2.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_2.url}}">
+                                            </a>
+                                            {% endif %}
+                                            {% if car.car_photo_3 %}
+                                            <a href="{{car.car_photo_3.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_3.url}}">
+                                            </a>
+                                            {% endif %}
+                                            {% if car.car_photo_4 %}
+                                            <a href="{{car.car_photo_4.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_4.url}}">
+                                            </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+					
+                        <div class="detail">
+                            <h1 class="title">
+                                <a href="{% url 'car_detail' car.id %}">{{ car.car_title }}</a>
+                            </h1>
+                            <div class="location">
+                                <a href="{% url 'car_detail' car.id %}">
+                                    <i class="flaticon-pin"></i>{{car.state}}, {{car.city}}
+                                </a>
+                            </div>
+                            <ul class="facilities-list clearfix">
+                                <li>{{car.fuel_type}}</li>
+                                <li>{{car.miles | intcomma}} km</li>
+                                <li>{{car.transmission}}</li>
+                                <li>{{car.body_style}}</li>
+                                <li>{{car.color}}</li>
+                                <li>{{car.year}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            </div>
+            <div class="slick-btn">
+                <div class="slick-prev slick-arrow-buton sab-4">
+                    <i class="fa fa-angle-left"></i>
+                </div>
+                <div class="slick-next slick-arrow-buton sab-3">
+                    <i class="fa fa-angle-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featured car end -->
+
+<!-- Rent car start -->
+<div class="featured-car content-area">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>Latest <span>Cars</span></h1>
+            <p></p>
+        </div>
+        <div class="row">
+          {% for car in all_cars|slice:":6" %}
+            <div class="col-lg-4 col-md-6">
+                <div class="car-box">
+                    <div class="car-thumbnail">
+                        <a href="{% url 'car_detail' car.id %}" class="car-img">
+                            <div class="tag">For Sale</div>
+                            <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car" style="min-height: 262px; max-height: 262px;">
+                            <div class="facilities-list clearfix">
+                                <ul>
+                                    <li>
+                                        <span><i class="flaticon-way"></i></span>{{car.miles | intcomma}} mi
+                                    </li>
+                                    <li>
+                                        <span><i class="flaticon-calendar-1"></i></span>{{car.year}}
+                                    </li>
+                                    <li>
+                                        <span><i class="flaticon-manual-transmission"></i></span>{{car.transmission}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
+
+                        <div class="carbox-overlap-wrapper">
+                            <div class="overlap-box">
+                                <div class="overlap-btns-area">
+                                    <div class="car-magnify-gallery">
+                                        <a href="{{car.car_photo.url}}" class="overlap-btn">
+                                            <i class="fa fa-expand"></i>
+                                            <img class="hidden" src="{{car.car_photo.url}}">
+                                        </a>
+                                        {% if car.car_photo_1 %}
+                                        <a href="{{car.car_photo_1.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.car_photo_1.url}}">
+                                        </a>
+                                        {% endif %}
+                                        {% if car.car_photo_2 %}
+                                        <a href="{{car.car_photo_2.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.car_photo_2.url}}">
+                                        </a>
+                                        {% endif %}
+                                        {% if car.car_photo_3 %}
+                                        <a href="{{car.car_photo_3.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.car_photo_3.url}}">
+                                        </a>
+                                        {% endif %}
+                                        {% if car.car_photo_4 %}
+                                        <a href="{{car.car_photo_4.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.car_photo_4.url}}">
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <h1 class="title">
+                            <a href="{% url 'car_detail' car.id %}">{{car.car_title}}</a>
+                        </h1>
+                        <div class="location">
+                            <a href="{% url 'car_detail' car.id %}">
+                                <i class="flaticon-pin"></i>{{car.state}}, {{car.city}}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer clearfix">
+                        <div class="pull-left ratings days">
+                            <p class="cartype">{{car.body_style}}</p>
+                        </div>
+                        <div class="pull-right">
+                            <p class="price">$ {{car.price | intcomma}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+          {% endfor %}
+
+        </div>
+    </div>
+</div>
+<!-- Rent car end -->
+
+
+<!-- Our team start -->
+<div class="our-team content-area bg-grea-3">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>Executive <span>Team</span></h1>
+            <p>Team working behind maintaining the quality of our Car Dealership Website.</p>
+        </div>
+        <!-- Slick slider area start -->
+        <div class="slick-slider-area clearfix">
+            <div class="row slick-carousel" data-slick='{"slidesToShow": 4, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+              {% for team in teams %}
+                <div class="slick-slide-item">
+                    <div class="team-1">
+                        <div class="photo">
+                            <a href="#">
+                                <img src="{{ team.photo.url }}" alt="team-1" class="img-fluid">
+                            </a>
+                            <div class="social-list clearfix">
+                                <a href="{{team.facebook_link}}" target="_blank" class="facebook-bg"><i class="fa fa-facebook"></i></a>
+                                <a href="{{team.twitter_link}}" target="_blank" class="twitter-bg"><i class="fa fa-twitter"></i></a>
+                                <a href="{{team.google_plus_link}}" target="_blank" class="google-bg"><i class="fa fa-google"></i></a>
+                            </div>
+                        </div>
+                        <div class="details">
+                            <h4><a href="#">{{team.first_name}} {{team.last_name}}</a></h4>
+                            <h5>{{team.designation}}</h5>
+                        </div>
+                    </div>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Our team end -->
+
+{% endblock %}
